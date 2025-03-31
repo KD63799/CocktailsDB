@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.cocktails.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_createCocktailsFragment"
+            app:destination="@id/createCocktailsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_detailsCocktailsFragment"
+            app:destination="@id/detailsCocktailsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_editCocktailsFragment"
+            app:destination="@id/editCocktailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createCocktailsFragment"
+        android:name="com.example.cocktails.create.CreateCocktailsFragment"
+        android:label="fragment_create_cocktails"
+        tools:layout="@layout/fragment_create_cocktails" />
+    <fragment
+        android:id="@+id/detailsCocktailsFragment"
+        android:name="com.example.cocktails.details.DetailsCocktailsFragment"
+        android:label="fragment_details_cocktails"
+        tools:layout="@layout/fragment_details_cocktails" />
+    <fragment
+        android:id="@+id/editCocktailsFragment"
+        android:name="com.example.cocktails.edit.EditCocktailsFragment"
+        android:label="fragment_edit_cocktails"
+        tools:layout="@layout/fragment_edit_cocktails" />
+</navigation>
