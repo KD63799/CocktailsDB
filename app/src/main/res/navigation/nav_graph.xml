@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_createCocktailsFragment"
-            app:destination="@id/createCocktailsFragment" />
+            app:destination="@id/createCocktailsFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="false" />
         <action
             android:id="@+id/action_mainFragment_to_detailsCocktailsFragment"
-            app:destination="@id/detailsCocktailsFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_editCocktailsFragment"
-            app:destination="@id/editCocktailsFragment" />
+            app:destination="@id/detailsCocktailsFragment"
+            app:popUpTo="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/createCocktailsFragment"
@@ -29,10 +29,22 @@
         android:id="@+id/detailsCocktailsFragment"
         android:name="com.example.cocktails.details.DetailsCocktailsFragment"
         android:label="fragment_details_cocktails"
-        tools:layout="@layout/fragment_details_cocktails" />
+        tools:layout="@layout/fragment_details_cocktails" >
+        <argument
+            android:name="CocktailBdl"
+            app:argType="com.example.cocktails.utils.CocktailAll" />
+        <action
+            android:id="@+id/action_detailsCocktailsFragment_to_editCocktailsFragment"
+            app:destination="@id/editCocktailsFragment"
+            app:popUpTo="@id/detailsCocktailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/editCocktailsFragment"
         android:name="com.example.cocktails.edit.EditCocktailsFragment"
         android:label="fragment_edit_cocktails"
-        tools:layout="@layout/fragment_edit_cocktails" />
+        tools:layout="@layout/fragment_edit_cocktails" >
+        <argument
+            android:name="CocktailBdl"
+            app:argType="com.example.cocktails.utils.CocktailAll" />
+    </fragment>
 </navigation>

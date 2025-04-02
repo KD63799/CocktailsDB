@@ -12,22 +12,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Title Cocktails"
+        android:text="@string/titre_cocktails"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/iv_details_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_marginTop="32dp"
         android:src="@android:drawable/btn_dialog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_details_title" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_details_title"
+        app:riv_border_color="#333333"
+        app:riv_border_width="2dip"
+        app:riv_corner_radius="30dip"
+        app:riv_mutate_background="true"
+        app:riv_oval="false"/>
 
     <TextView
         android:id="@+id/tv_details_title_ingredients"
@@ -35,18 +40,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:fontFamily="cursive"
-        android:text="Ingrédients"
+        android:text="@string/ingr_dients"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_details_image" />
 
     <TextView
-        android:id="@+id/et_details_ingredients_content"
+        android:id="@+id/tv_details_ingredients_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Ingrédients Content"
+        android:layout_marginEnd="16dp"
+        android:textSize="16sp"
+        android:text="@string/ingr_dients_contenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_details_title_ingredients" />
@@ -57,21 +65,35 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:fontFamily="cursive"
-        android:text="Instructions"
+        android:text="@string/instructions"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_details_ingredients_content" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_details_ingredients_content" />
 
     <TextView
-        android:id="@+id/et_details_instructions_content"
+        android:id="@+id/tv_details_instructions_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
-        android:text="Instructions Content"
+        android:layout_marginEnd="16dp"
+        android:textSize="16sp"
+        android:text="@string/instructions_contenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_details_title_instructions" />
+
+    <Button
+        android:id="@+id/btn_details_modifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modifier"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tv_details_title_ingredients"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_details_image"
+        app:layout_constraintTop_toBottomOf="@+id/tv_details_title" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

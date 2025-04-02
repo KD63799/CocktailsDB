@@ -1,5 +1,25 @@
 <resources>
     <string name="app_name">Cocktails</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_database">Erreur avec la base de donnée</string>
+    <string name="nouveau_cocktails">Nouveau Cocktails</string>
+    <string name="mes_cocktails">Mes Cocktails</string>
+    <string name="modifier_cocktail">Modifier Cocktail</string>
+    <string name="nom">Nom</string>
+    <string name="image_url">Image URL</string>
+    <string name="ingr_dients">Ingrédients</string>
+    <string name="instructions">Instructions</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="modifier">Modifier</string>
+    <string name="instructions_contenu">Instructions Contenu</string>
+    <string name="ingr_dients_contenu">Ingrédients Contenu</string>
+    <string name="titre_cocktails">Titre Cocktails</string>
+    <string name="nouveau_cocktail">Nouveau Cocktail</string>
+    <string name="cree">CREE</string>
+    <string name="remplissez_tout_les_champs">Veuillez remplir tout les champs</string>
+    <string name="erreur_creation_cocktail">Erreur lors de la creation d\'un cocktail</string>
+    <string name="une_erreur_est_survenue">Une erreur est survenue</string>
+    <string name="erreur_update_cocktail">Une erreur s\'est produite lors de l\'update du cocktail</string>
+    <string name="erreur_supression_cocktail">Erreur supression cocktail</string>
+    <string name="cocktail_introuvable">Les données du Cocktail n\'ont pas pu être récupérées</string>
 </resources>
