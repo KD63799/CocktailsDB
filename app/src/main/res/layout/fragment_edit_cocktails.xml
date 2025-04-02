@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4DC68"
+    android:fillViewport="true"
     tools:context=".edit.EditCocktailsFragment" >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4DC68">
 
     <TextView
         android:id="@+id/tv_edit_title"
@@ -120,6 +126,8 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="32dp"
         android:text="@string/supprimer"
+        android:theme="@style/SquareButtonStyle"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_edit_instructions" />
 
@@ -135,3 +143,4 @@
         app:layout_constraintTop_toBottomOf="@+id/et_edit_instructions" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

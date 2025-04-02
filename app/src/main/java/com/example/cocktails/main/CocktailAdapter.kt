@@ -45,7 +45,7 @@ class CocktailAdapter(
 
 class CocktailDiffCallback : DiffUtil.ItemCallback<CocktailAll>() {
     override fun areItemsTheSame(oldItem: CocktailAll, newItem: CocktailAll): Boolean =
-        oldItem.id == newItem.id
+        oldItem.id == newItem.id || oldItem.uuid == newItem.uuid
 
     override fun areContentsTheSame(oldItem: CocktailAll, newItem: CocktailAll): Boolean =
         oldItem == newItem

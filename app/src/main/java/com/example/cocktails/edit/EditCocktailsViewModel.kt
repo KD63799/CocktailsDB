@@ -63,6 +63,7 @@ class EditCocktailsViewModel @Inject constructor(
                 val result = updatedCocktail?.let { cocktailRepository.updateLocalCocktail(it) }
                 if (result == "ok") {
                     _operationSuccess.value = true
+                    _messageLiveData.value = context.getString(R.string.modification_enregistr_e)
                 } else {
                     _messageLiveData.value = context.getString(R.string.erreur_creation_cocktail)
                 }
@@ -92,6 +93,7 @@ class EditCocktailsViewModel @Inject constructor(
                 val result = cocktailToDelete?.let { cocktailRepository.deleteLocalCocktail(it) }
                 if (result == "ok") {
                     _operationSuccess.value = true
+                    _messageLiveData.value = context.getString(R.string.cocktail_supprim)
                 } else {
                     _messageLiveData.value = context.getString(R.string.erreur_supression_cocktail)
                 }

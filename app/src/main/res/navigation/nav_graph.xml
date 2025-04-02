@@ -34,9 +34,10 @@
             android:name="CocktailBdl"
             app:argType="com.example.cocktails.utils.CocktailAll" />
         <action
-            android:id="@+id/action_detailsCocktailsFragment_to_editCocktailsFragment"
+            android:id="@+id/action_detailsCocktailsFragment_to_editCocktailsFragment2"
             app:destination="@id/editCocktailsFragment"
-            app:popUpTo="@id/detailsCocktailsFragment" />
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="false"/>
     </fragment>
     <fragment
         android:id="@+id/editCocktailsFragment"

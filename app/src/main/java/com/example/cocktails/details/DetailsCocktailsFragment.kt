@@ -59,8 +59,10 @@ class DetailsCocktailsFragment : Fragment() {
 
                 btnDetailsModifier.setOnClickListener {
                     val navDir =
-                        DetailsCocktailsFragmentDirections.actionDetailsCocktailsFragmentToEditCocktailsFragment(cocktail)
-                    navController.navigate(navDir)                }
+                        DetailsCocktailsFragmentDirections
+                            .actionDetailsCocktailsFragmentToEditCocktailsFragment2(cocktail)
+                    navController.navigate(navDir)
+                }
             }
         }
 
@@ -69,8 +71,8 @@ class DetailsCocktailsFragment : Fragment() {
         }
     }
 
-        override fun onDestroyView() {
-            super.onDestroyView()
-            _binding = null
-        }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
+}

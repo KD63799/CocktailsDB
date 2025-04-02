@@ -18,7 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val cocktailRepository: CocktailRepository
-): ViewModel() {
+) : ViewModel() {
 
     private var _listMerged = MutableLiveData<List<CocktailAll>>()
     var listMerged: LiveData<List<CocktailAll>> = _listMerged
@@ -31,38 +31,61 @@ class MainViewModel @Inject constructor(
         loadAllCocktails()
     }
 
-    fun loadAllCocktails(){
+    fun loadAllCocktails() {
         viewModelScope.launch {
             var fusionList = mutableListOf<CocktailAll>()
             val listAPI = cocktailRepository.getAllCocktailRemote().first
-            cocktailRepository
-                .createLocalCocktail(
-                    Cocktail(
-                        UUID.randomUUID(),
-                        "Vodka 2",
-                        "x",
-                        "nothing",
-                        "nothing ing")
-                )
-
             val listLocal = cocktailRepository.getAllCocktailLocal()
 
 
             listAPI.forEach {
-                with(it){
-                    fusionList.add(CocktailAll(
-                        id = idDrink.toInt(),
-                        uuid = null,
-                        title = strDrink!!,
-                        imageUrl = strDrinkThumb!!,
-                        ingredients = strIngredient1!!,
-                        instructions = strInstructions!!
-                    ))
+                with(it) {
+                    fusionList.add(
+                        CocktailAll(
+                            id = idDrink.toInt(),
+                            uuid = null,
+                            title = strDrink!!,
+                            imageUrl = strDrinkThumb!!,
+                            ingredients = (
+                                    (it.strIngredient1 ?: "") + " " + (it.strMeasure1
+                                        ?: "") + "\n" +
+                                            (it.strIngredient2 ?: "") + " " + (it.strMeasure2
+                                        ?: "") + "\n" +
+                                            (it.strIngredient3 ?: "") + " " + (it.strMeasure3
+                                        ?: "") + "\n" +
+                                            (it.strIngredient4 ?: "") + " " + (it.strMeasure4
+                                        ?: "") + "\n" +
+                                            (it.strIngredient5 ?: "") + " " + (it.strMeasure5
+                                        ?: "") + "\n" +
+                                            (it.strIngredient6 ?: "") + " " + (it.strMeasure6
+                                        ?: "") + "\n" +
+                                            (it.strIngredient7 ?: "") + " " + (it.strMeasure7
+                                        ?: "") + "\n" +
+                                            (it.strIngredient8 ?: "") + " " + (it.strMeasure8
+                                        ?: "") + "\n" +
+                                            (it.strIngredient9 ?: "") + " " + (it.strMeasure9
+                                        ?: "") + "\n" +
+                                            (it.strIngredient10 ?: "") + " " + (it.strMeasure10
+                                        ?: "") + "\n" +
+                                            (it.strIngredient11 ?: "") + " " + (it.strMeasure11
+                                        ?: "") + "\n" +
+                                            (it.strIngredient12 ?: "") + " " + (it.strMeasure12
+                                        ?: "") + "\n" +
+                                            (it.strIngredient13 ?: "") + " " + (it.strMeasure13
+                                        ?: "") + "\n" +
+                                            (it.strIngredient14 ?: "") + " " + (it.strMeasure14
+                                        ?: "") + "\n" +
+                                            (it.strIngredient15 ?: "") + " " + (it.strMeasure15
+                                        ?: "") + "\n"
+                                    ).trim(),
+                            instructions = strInstructions!!
+                        )
+                    )
                 }
             }
 
             listLocal.forEach {
-                with(it){
+                with(it) {
                     fusionList.add(
                         CocktailAll(
                             id = null,
@@ -71,11 +94,11 @@ class MainViewModel @Inject constructor(
                             imageUrl = url,
                             ingredients = ingredients,
                             instructions = instructions
-                        ) )
+                        )
+                    )
                 }
             }
-            _listMerged.value = fusionList
-            Log.i(TAG, "getAll: ${fusionList}")
+            _listMerged.value = fusionList.sortedBy { it.title }
         }
     }
 

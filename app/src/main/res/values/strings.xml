@@ -2,15 +2,15 @@
     <string name="app_name">Cocktails</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="error_database">Erreur avec la base de donnée</string>
-    <string name="nouveau_cocktails">Nouveau Cocktails</string>
+    <string name="nouveau_cocktails">NOUVEAU COCKTAIL</string>
     <string name="mes_cocktails">Mes Cocktails</string>
-    <string name="modifier_cocktail">Modifier Cocktail</string>
+    <string name="modifier_cocktail">MODIFIER COCKTAIL</string>
     <string name="nom">Nom</string>
     <string name="image_url">Image URL</string>
     <string name="ingr_dients">Ingrédients</string>
     <string name="instructions">Instructions</string>
-    <string name="supprimer">Supprimer</string>
-    <string name="modifier">Modifier</string>
+    <string name="supprimer">SUPPRIMER</string>
+    <string name="modifier">MODIFIER</string>
     <string name="instructions_contenu">Instructions Contenu</string>
     <string name="ingr_dients_contenu">Ingrédients Contenu</string>
     <string name="titre_cocktails">Titre Cocktails</string>
@@ -22,4 +22,8 @@
     <string name="erreur_update_cocktail">Une erreur s\'est produite lors de l\'update du cocktail</string>
     <string name="erreur_supression_cocktail">Erreur supression cocktail</string>
     <string name="cocktail_introuvable">Les données du Cocktail n\'ont pas pu être récupérées</string>
+    <string name="cocktail_succes">Cocktail crée avec succès</string>
+    <string name="modification_enregistr_e">Modification enregistrée</string>
+    <string name="cocktail_supprim">Cocktail supprimé</string>
+    <string name="editer">EDITER</string>
 </resources>

@@ -22,8 +22,8 @@ class CreateCocktailsViewModel @Inject constructor(
     val userMessageLiveData: LiveData<String>
         get() = _userMessageLiveData
 
-    private val _navigationDestination = MutableLiveData<NavDirections>()
-    val navigationDestination: LiveData<NavDirections>
+    private val _navigationDestination = MutableLiveData<Boolean>()
+    val navigationDestination: LiveData<Boolean>
         get() = _navigationDestination
 
     fun checkFormAdd(
@@ -56,8 +56,8 @@ class CreateCocktailsViewModel @Inject constructor(
                 )
                 val result = cocktailRepository.createLocalCocktail(cocktail)
                 if (result == "ok") {
-                    //_navigationDestination.value =
-                        //CreateCocktailsFragmentDirections.actionCreateCocktailsFragmentToMainFragment()
+                    _navigationDestination.value = true
+                    _userMessageLiveData.value = context.getString(R.string.cocktail_succes)
                 } else {
                     _userMessageLiveData.value = context.getString(R.string.erreur_creation_cocktail)
                 }

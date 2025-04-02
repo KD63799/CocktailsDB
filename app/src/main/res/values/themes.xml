@@ -7,7 +7,14 @@
 
     <style name="Theme.Cocktails" parent="Base.Theme.Cocktails" />
     <style name="SquareButtonStyle" parent="Widget.MaterialComponents.Button">
-        <item name="cornerRadius">2dp</item>
+        <item name="shapeAppearanceOverlay">@style/SquareShape</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="SquareShape" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
     </style>
 
 </resources>

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4DC68"
-    tools:context=".details.DetailsCocktailsFragment">
+    android:fillViewport="true"
+    tools:context=".details.DetailsCocktailsFragment" >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4DC68">
 
     <TextView
         android:id="@+id/tv_details_title"
@@ -38,7 +45,7 @@
         android:id="@+id/tv_details_title_ingredients"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="cursive"
         android:text="@string/ingr_dients"
         android:textSize="34sp"
@@ -53,8 +60,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
+        android:text=""
         android:textSize="16sp"
-        android:text="@string/ingr_dients_contenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_details_title_ingredients" />
@@ -63,7 +70,7 @@
         android:id="@+id/tv_details_title_instructions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="cursive"
         android:text="@string/instructions"
         android:textSize="34sp"
@@ -73,13 +80,13 @@
 
     <TextView
         android:id="@+id/tv_details_instructions_content"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:textSize="16sp"
+        android:layout_marginEnd="32dp"
         android:text="@string/instructions_contenu"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_details_title_instructions" />
@@ -88,8 +95,10 @@
         android:id="@+id/btn_details_modifier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Modifier"
+        android:text="@string/editer"
+        android:theme="@style/SquareButtonStyle"
         android:visibility="gone"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tv_details_title_ingredients"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/iv_details_image"
@@ -97,3 +106,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
